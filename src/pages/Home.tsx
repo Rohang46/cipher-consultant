@@ -14,7 +14,6 @@ import { coursesData } from '../data/courses';
 import { certificationsData } from '../data/certifications';
 import { specialtiesData } from '../data/specialties';
 import { testimonialsData } from '../data/testimonials';
-import { siteConfig } from '../config/siteConfig';
 
 interface HomeProps {
   onOpenEnquiryModal: (courseTitle?: string) => void;
@@ -360,7 +359,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenEnquiryModal }) => {
               </span>
               <h3 className="text-2xl font-bold text-slate-900">Enquire Now for Medical Coding Batches</h3>
               <p className="text-xs text-slate-600 mt-1">
-                Fill in your details below to speak with our training advisor at {siteConfig.location.fullLocation}.
+                Fill in your details below to speak with our training advisor.
               </p>
             </div>
 

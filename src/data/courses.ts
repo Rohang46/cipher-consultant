@@ -111,7 +111,7 @@ export const coursesData: Course[] = [
     category: "Certification",
     shortDescription: "Comprehensive training focused on inpatient and facility coding, ICD-10-PCS, DRG assignment, and clinical documentation integrity.",
     fullDescription: "Structured preparation for CCS certification with emphasis on facility coding knowledge, clinical documentation, inpatient procedural coding (ICD-10-PCS), outpatient concepts, and coding guidelines.",
-    duration: "3 Months (12 Weeks)",
+    duration: "20 Days",
     trainingMode: "Online / Offline / Hybrid",
     eligibility: "Basic medical coding knowledge or completion of Medical Coding Foundation training.",
     level: "Advanced",

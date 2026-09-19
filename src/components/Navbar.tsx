@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageSquare, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, MessageSquare, ArrowRight, Award } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '../config/siteConfig';
 
@@ -44,9 +44,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
       <div className="bg-slate-900 text-slate-300 py-1.5 px-4 text-xs font-medium border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-teal-400">
-              <span className="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-              Pune, Maharashtra, India
+            <span className="flex items-center gap-1.5 text-teal-400 font-semibold">
+              <Award className="w-3.5 h-3.5 text-teal-400" />
+              Medical Coding Training Institute
             </span>
             <span className="hidden sm:inline text-slate-500">|</span>
             <span className="hidden sm:flex items-center gap-1 text-slate-300">
@@ -169,9 +169,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiryModal }) => {
               >
                 Enquire Now
               </button>
-              <div className="text-center text-xs text-slate-500">
-                {siteConfig.location.fullLocation}
-              </div>
             </div>
           </div>
         </div>

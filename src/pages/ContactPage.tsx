@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, MessageSquare, Clock, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MessageSquare, Clock } from 'lucide-react';
 import { ContactForm } from '../components/ContactForm';
 import { siteConfig } from '../config/siteConfig';
 
@@ -17,7 +17,7 @@ export const Contact: React.FC = () => {
             Contact Cipher Consultant
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            Reach out to our training advisors in Pune, Maharashtra for batch schedules, course details, certification preparation guidance, or to visit our institute.
+            Reach out to our training advisors for batch schedules, course details, and certification preparation guidance.
           </p>
         </div>
       </section>
@@ -31,22 +31,11 @@ export const Contact: React.FC = () => {
             
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
               <h3 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">
-                Institute Location & Details
+                Institute Contact Details
               </h3>
 
               <div className="space-y-4 text-xs sm:text-sm text-slate-700">
                 
-                {/* Address */}
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="font-bold block text-slate-900">Institute Address:</span>
-                    <span className="text-slate-600 leading-relaxed">{siteConfig.location.address}</span>
-                  </div>
-                </div>
-
                 {/* Phone */}
                 <div className="flex items-start gap-3">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center flex-shrink-0">
@@ -122,37 +111,6 @@ export const Contact: React.FC = () => {
                 </a>
               </div>
 
-            </div>
-
-            {/* Google Map Section */}
-            <div className="bg-slate-900 rounded-3xl p-4 border border-slate-800 shadow-lg space-y-3">
-              <div className="flex items-center justify-between px-2 text-white text-xs font-bold">
-                <span className="flex items-center gap-1.5 text-teal-400">
-                  <MapPin className="w-4 h-4" />
-                  Google Maps Location (Pune)
-                </span>
-                <a
-                  href={siteConfig.location.mapSearchUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-400 hover:text-white flex items-center gap-1 text-[11px]"
-                >
-                  Open Map <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-
-              <div className="rounded-2xl overflow-hidden aspect-video border border-slate-800 bg-slate-950">
-                <iframe
-                  title="Cipher Consultant Pune Location Map"
-                  src={siteConfig.location.googleMapsEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
 
           </div>

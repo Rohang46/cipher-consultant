@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, MessageSquare, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MessageSquare, ShieldCheck } from 'lucide-react';
 import { Logo } from './Logo';
 import { siteConfig } from '../config/siteConfig';
 
@@ -8,13 +8,13 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           
           {/* Col 1: Brand & Tagline */}
-          <div className="lg:col-span-2 space-y-4 text-left">
+          <div className="space-y-4 text-left">
             <Logo variant="light" />
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Cipher Consultant Medical Coding Training Institute provides industry-focused medical coding training, CPC and CCS certification preparation, and specialty coding education in Pune, Maharashtra.
+              Cipher Consultant Medical Coding Training Institute provides industry-focused medical coding training, CPC and CCS certification preparation, and specialty coding education.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {/* LinkedIn SVG */}
@@ -152,23 +152,19 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 4: Location & Contact */}
+          {/* Col 4: Contact */}
           <div className="text-left">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-4 border-l-2 border-teal-500 pl-2">
-              Institute Location
+              Contact Details
             </h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-teal-400 flex-shrink-0 mt-1" />
-                <span>{siteConfig.location.fullLocation}</span>
-              </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
                 <span>{siteConfig.contact.phoneDisplay}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span>{siteConfig.contact.emailDisplay}</span>
+                <span className="break-all">{siteConfig.contact.emailDisplay}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <MessageSquare className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -193,7 +189,6 @@ export const Footer: React.FC = () => {
         {/* Bottom Copyright Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 pt-2">
           <p>© 2026 Cipher Consultant Medical Coding Training Institute. All Rights Reserved.</p>
-          <p className="text-slate-400">Location: Pune, Maharashtra, India</p>
         </div>
       </div>
     </footer>

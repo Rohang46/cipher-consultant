@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Loader2, MessageSquare } from 'lucide-react';
 import type { EnquiryFormData } from '../types';
 import { submitEnquiry } from '../services/leadService';
 import { coursesData } from '../data/courses';
@@ -27,7 +27,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
 
   const [errors, setErrors] = useState<Partial<Record<keyof EnquiryFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitResult, setSubmitResult] = useState<{ success: boolean; leadId?: string; message: string } | null>(null);
+  const [submitResult, setSubmitResult] = useState<{ success: boolean; leadId?: string; message: string; whatsappUrl?: string } | null>(null);
 
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof EnquiryFormData, string>> = {};
@@ -63,10 +63,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
     try {
       const res = await submitEnquiry(formData);
       setSubmitResult(res);
+
+      // Open WhatsApp directly to send mobile notification to 8668409022
+      if (res.whatsappUrl) {
+        window.open(res.whatsappUrl, '_blank');
+      }
+
       if (res.success && onSuccess) {
         setTimeout(() => {
           onSuccess();
-        }, 2000);
+        }, 4000);
       }
     } catch {
       setSubmitResult({
@@ -84,13 +90,28 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h4 className="text-xl font-bold text-slate-900">Enquiry Submitted Successfully!</h4>
+        <h4 className="text-xl font-bold text-slate-900">Enquiry Dispatched Successfully!</h4>
         <p className="text-sm text-slate-700 max-w-md mx-auto">
           {submitResult.message}
         </p>
         <div className="inline-block bg-white px-4 py-2 rounded-lg border border-emerald-200 text-xs font-mono text-emerald-800">
           Reference ID: <span className="font-bold">{submitResult.leadId}</span>
         </div>
+
+        {submitResult.whatsappUrl && (
+          <div className="pt-2">
+            <a
+              href={submitResult.whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-colors"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>Send Lead Directly via WhatsApp (+91 86684 09022)</span>
+            </a>
+          </div>
+        )}
+
         <div className="pt-2">
           <button
             onClick={() => setSubmitResult(null)}
@@ -139,7 +160,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
             name="mobileNumber"
             value={formData.mobileNumber}
             onChange={handleChange}
-            placeholder="+91 98765 43210"
+            placeholder="+91 86684 09022"
             className={`w-full px-3.5 py-2.5 rounded-lg border ${errors.mobileNumber ? 'border-rose-400 bg-rose-50/30' : 'border-slate-300 focus:border-blue-600'} focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm text-slate-900`}
           />
           {errors.mobileNumber && <p className="mt-1 text-xs text-rose-600">{errors.mobileNumber}</p>}
@@ -281,7 +302,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
             className="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm text-slate-900 bg-white"
           >
             <option value="Online">Online Interactive</option>
-            <option value="Offline">Offline Classroom (Pune)</option>
+            <option value="Offline">Offline Classroom</option>
             <option value="Hybrid">Hybrid Mode</option>
             <option value="Not Sure">Not Sure</option>
           </select>
@@ -311,7 +332,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ defaultCourse, onSucce
         {isSubmitting ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
-            <span>Submitting Enquiry...</span>
+            <span>Sending Enquiry to Email & WhatsApp...</span>
           </>
         ) : (
           <>

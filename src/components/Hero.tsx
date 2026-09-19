@@ -85,10 +85,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiryModal }) => {
               </button>
             </div>
 
-            {/* Location Tag */}
+            {/* Badge Tag */}
             <div className="pt-2 text-xs text-slate-400 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span>Based in Pune, Maharashtra, India</span>
+              <span>Professional Medical Coding Institute</span>
             </div>
 
           </div>
@@ -145,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiryModal }) => {
                 <div className="mt-4 bg-blue-950/70 border border-blue-800/60 rounded-xl p-3 flex items-center justify-between text-left">
                   <div>
                     <span className="text-xs font-bold text-blue-200 block">Career-Oriented Education</span>
-                    <span className="text-[11px] text-blue-300">Pune, Maharashtra</span>
+                    <span className="text-[11px] text-blue-300">Healthcare Industry Focus</span>
                   </div>
                   <span className="px-2.5 py-1 rounded-lg bg-blue-600 text-white text-xs font-bold shadow">
                     Practical Focus
