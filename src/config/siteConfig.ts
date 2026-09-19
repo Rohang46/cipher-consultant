@@ -16,12 +16,12 @@ export const siteConfig = {
   },
 
   contact: {
-    phoneDisplay: "+91 XXXXX XXXXX",
-    phoneValue: "+919876543210",
-    emailDisplay: "info@example.com",
-    emailValue: "info@example.com",
-    whatsappDisplay: "+91 XXXXX XXXXX",
-    whatsappValue: "+919876543210",
+    phoneDisplay: "+91 86684 09022",
+    phoneValue: "+918668409022",
+    emailDisplay: "ciphertalentconsultant@gmail.com",
+    emailValue: "ciphertalentconsultant@gmail.com",
+    whatsappDisplay: "+91 86684 09022",
+    whatsappValue: "918668409022",
     officeHours: "Monday – Saturday: 10:00 AM – 6:00 PM (IST)"
   },
 
@@ -56,10 +56,10 @@ export const siteConfig = {
   },
 
   stats: [
-    { id: "students", value: "100+", label: "Students Trained" },
+    { id: "students", value: "1000+", label: "Students Trained" },
+    { id: "duration", value: "45 Days", label: "Training Duration" },
     { id: "specialties", value: "4+", label: "Specialty Programs" },
-    { id: "certifications", value: "2", label: "Certification Tracks" },
-    { id: "focus", value: "Career-Focused", label: "Practical Training" }
+    { id: "certifications", value: "2", label: "Certification Tracks" }
   ],
 
   disclaimers: {

@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiryModal }) => {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Industry-focused medical coding training designed to help you develop practical skills, prepare for professional certifications, and build a successful healthcare career in Pune.
+              Industry-focused medical coding training designed to help you develop practical skills, prepare for professional certifications, and build a successful healthcare career in the healthcare industry.
             </p>
 
             {/* Key Bullet Highlights */}
